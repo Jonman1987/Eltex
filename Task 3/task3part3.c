@@ -2,18 +2,18 @@
 
 int main(int argc, char const *argv[])
 {
-	int matrix_size = 10;
-	int matrix[matrix_size];
-	int *p = &matrix[0];
+	int array_size = 10;
+	int array[array_size];
+	int *p = &array[0];
 
-	for (int i = 0, matrix_value = 1; i < matrix_size; ++i, ++matrix_value) {
-		matrix[i] = matrix_value;
+	for (int i = 0, array_value = 1; i < array_size; ++i, ++array_value) {
+		array[i] = array_value;
 	}
 
 	printf("Result:\n");
 
-	for (int i = 0; i < matrix_size; ++i) {
-		printf("%2i ", *p + i);
+	for (int i = 0; i < array_size; ++i) {
+		printf("%2i ", *(p + i));
 	}
 
 	return 0;
