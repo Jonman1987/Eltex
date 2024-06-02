@@ -39,14 +39,14 @@ int main(int argc, char const *argv[])
 
 		switch(menu_value) {
 			case 1: 
-				if(CreateNewRecord(&current_ptr, &records_count, array_length) > 0){
+				if(CreateNewRecord(&current_ptr, &records_count, array_length) > 0) {
 					has_error = 1;
 				}
 
 				break;
 
 			case 2:
-				if(DeleteRecord(&start_ptr, &records_count, field_length, deleted_name) > 0){
+				if(DeleteRecord(&start_ptr, &records_count, field_length, deleted_name) > 0) {
 					has_error = 1;
 				}
 				
@@ -65,7 +65,7 @@ int main(int argc, char const *argv[])
 			case 5: 
 				menu_value = 9;
 
-				if(has_error == 1){
+				if(has_error == 1) {
 					PrintLogs();
 				}
 
@@ -208,7 +208,7 @@ int GetRecord(struct abonent **start_ptr, int *records_count, int field_length, 
 	return 0;
 }
 
-int PrintAllRecords(struct abonent **start_ptr, int *records_count, const char *deleted_name){
+int PrintAllRecords(struct abonent **start_ptr, int *records_count, const char *deleted_name) {
 	system("clear");
 	int is_record_found_without_deleted = 0;
 
@@ -252,20 +252,20 @@ int GetMenuValue() {
 	int input_value = 0;
 
 	printf("\nMenu:\n");
-		fflush(stdout);
-		printf("1 - Add abonent\n");
-		printf("2 - Delete abonent\n");
-		printf("3 - Find abonent by name\n");
-		printf("4 - Print all records\n");
-		printf("5 - Exit\n");
+	fflush(stdout);
+	printf("1 - Add abonent\n");
+	printf("2 - Delete abonent\n");
+	printf("3 - Find abonent by name\n");
+	printf("4 - Print all records\n");
+	printf("5 - Exit\n");
 
-		if(scanf("%i", &input_value) != 1){
-			while(fgetc(stdin) != '\n'){
-				continue;
-			}	
-		}
+	if(scanf("%i", &input_value) != 1){
+		while(fgetc(stdin) != '\n'){
+			continue;
+		}	
+	}
 
-		return input_value;
+	return input_value;
 }
 
 // Function for develop. Can addition print into file.
