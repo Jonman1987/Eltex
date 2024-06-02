@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define STRUCT_FIELD_SIZE 100 
+#define STRUCT_FIELD_SIZE 10
 
 struct abonent;
 
