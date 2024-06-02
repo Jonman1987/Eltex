@@ -5,7 +5,7 @@
 int main(int argc, char const *argv[])
 {
 	int field_length = 10;
-	int array_length = 100;
+	int array_length = 3;
 	int menu_value = 0;
 	int records_count = 0;
 	int deleted_position = 0;
@@ -34,7 +34,11 @@ int main(int argc, char const *argv[])
 		printf("4 - Print all records\n");
 		printf("5 - Exit\n");
 
-		scanf("%i", &menu_value);
+		if(scanf("%i", &menu_value) != 1){
+			while(fgetc(stdin) != '\n'){
+				continue;
+			}	
+		}
 
 		switch(menu_value) {
 			case 1: 
@@ -45,14 +49,18 @@ int main(int argc, char const *argv[])
 				}
 
 				system("clear");
+				printf("Please, input not more than 9 symbols.\n");
 				printf("Input name: ");
 				scanf("%s", current_ptr->name);
+				current_ptr->name[9] = '\0';
 
 				printf("Input second name: ");
 				scanf("%s", current_ptr->second_name);
+				current_ptr->second_name[9] = '\0';
 
 				printf("Input telephone: ");
 				scanf("%s", current_ptr->tel);
+				current_ptr->tel[9] = '\0';
 			
 				records_count++;
 				current_ptr++;
