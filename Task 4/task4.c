@@ -5,7 +5,7 @@
 int main(int argc, char const *argv[])
 {
 	int field_length = 10;
-	int array_length = 3;
+	int array_length = 100;
 	int menu_value = 0;
 	int records_count = 0;
 	int deleted_position = 0;
