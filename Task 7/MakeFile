@@ -1,0 +1,8 @@
+all:
+    gcc libcalc\add.c -c
+    gcc libcalc\sub.c -c
+    gcc libcalc\mul.c -c
+    gcc libcalc\div.c -c
+    ar rc libcalc.a libcalc\add.o libcalc\sub.o libcalc\div.o libcalc\mul.o
+    gcc main.c inputnumbers.c getmenuvalue.c -L. -lcalc
+
