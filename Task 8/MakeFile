@@ -1,0 +1,12 @@
+all:
+    gcc libcalc/add.c -fPIC -c
+    gcc libcalc/sub.c -fPIC -c
+    gcc libcalc/mul.c -fPIC -c
+    gcc libcalc/div.c -fPIC -c
+    gcc -shared add.o sub.o mul.o div.o -o libcalc.so
+    gcc inputnumbers.c -c
+    gcc getmenuvalue.c -c
+    gcc main.c inputnumbers.o getmenuvalue.o -o main.out -L. -lcalc
+    LD_LIBRARY_PATH=$PWD ./main.out 
+
+
