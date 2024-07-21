@@ -1,0 +1,9 @@
+all:
+    gcc printlogs.c -c
+    gcc printallrecords.c -c
+    gcc getrecord.c -c
+    gcc getmenuvalue.c -c
+    gcc deleterecord.c -c
+    gcc createnewrecord.c -c
+    gcc main.c printlogs.o printallrecords.o getrecord.o getmenuvalue.o deleterecord.o createnewrecord.o
+    
